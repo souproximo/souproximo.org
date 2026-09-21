@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Página não encontrada — Sou Próximo</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  @font-face {
+    font-family: 'Archivo'; font-style: normal; font-weight: 600; font-display: swap;
+    src: url(/fonts/archivo-latin-600-normal.woff2) format('woff2');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face {
+    font-family: 'Spectral'; font-style: normal; font-weight: 400; font-display: swap;
+    src: url(/fonts/spectral-latin-400-normal.woff2) format('woff2');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+  :root {
+    color-scheme: light dark;
+    --paper: #F3F4F0; --ink: #151D19; --muted: #6E796F; --accent: #2E6A52;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #121714; --ink: #E7EBE4; --muted: #8C978D; --accent: #7FBE9C; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; background: var(--paper); color: var(--ink);
+    font-family: "Spectral", Georgia, serif; font-size: 17px; line-height: 1.62;
+    display: grid; place-items: center; padding: 24px;
+  }
+  main { max-width: 480px; border-top: 2px solid var(--ink); padding-top: 22px; }
+  h1 {
+    font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; font-weight: 600;
+    font-size: clamp(26px, 6vw, 34px); letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 16px;
+  }
+  p { margin: 0 0 16px; }
+  .muted { color: var(--muted); font-size: 15px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+  <main>
+    <h1>Esta página não existe</h1>
+    <p>Pode ser um endereço digitado com um caractere a mais, ou uma página que saiu do ar.</p>
+    <p><a href="/">Voltar ao começo</a></p>
+    <p class="muted">Se você chegou aqui procurando ajuda com um problema urgente, nada neste site substitui o Procon, o CRAS, a Defensoria Pública ou o SUS — procure um deles.</p>
+  </main>
+</body>
+</html>

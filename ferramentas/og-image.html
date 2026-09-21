@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>og-image</title>
+<style>
+  @font-face {
+    font-family: 'Archivo'; font-style: normal; font-weight: 600;
+    src: url(../fonts/archivo-latin-600-normal.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Archivo'; font-style: normal; font-weight: 700;
+    src: url(../fonts/archivo-latin-700-normal.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Spectral'; font-style: normal; font-weight: 400;
+    src: url(../fonts/spectral-latin-400-normal.woff2) format('woff2');
+  }
+
+  :root {
+    --paper: #F3F4F0; --ink: #151D19; --muted: #6E796F;
+    --rule: #D6DAD0; --accent: #2E6A52;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Spectral", Georgia, serif;
+    display: flex; flex-direction: column;
+    padding: 64px 72px;
+  }
+  .topo { border-top: 4px solid var(--ink); padding-top: 34px; }
+  .marca {
+    font-family: "Archivo", sans-serif; font-weight: 600;
+    font-size: 88px; letter-spacing: -0.03em; line-height: 1;
+  }
+  .tese {
+    font-size: 44px; line-height: 1.24; margin-top: 34px; max-width: 20ch;
+  }
+  .apoio {
+    font-size: 25px; line-height: 1.45; color: var(--muted);
+    margin-top: 18px; max-width: 40ch;
+  }
+  .base {
+    margin-top: auto; border-top: 1px solid var(--rule); padding-top: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .dominio {
+    font-family: "Archivo", sans-serif; font-weight: 600;
+    font-size: 26px; letter-spacing: -0.01em;
+  }
+  .selo {
+    border: 2px solid var(--accent); color: var(--accent);
+    font-family: "Archivo", sans-serif; font-weight: 600;
+    font-size: 19px; letter-spacing: 0.09em; text-transform: uppercase;
+    padding: 6px 14px 7px; font-variant-numeric: tabular-nums;
+  }
+  .sinal { display: flex; align-items: center; gap: 0; }
+</style>
+</head>
+<body>
+  <div class="topo">
+    <div class="marca">Sou Próximo</div>
+    <div class="tese">Ajudar quem precisa, sem nada em troca.</div>
+    <div class="apoio">Nada à venda, nenhum anúncio, nenhum dado seu guardado.</div>
+  </div>
+  <div class="base">
+    <span class="dominio">souproximo.org</span>
+    <span class="selo">Verificado em 21 · 09 · 2026</span>
+  </div>
+</body>
+</html>
