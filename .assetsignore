@@ -1,0 +1,18 @@
+# O que fica no repositório mas não vai para o ar.
+#
+# Tudo que não estiver listado aqui é publicado e fica acessível por URL.
+# Ao adicionar arquivo novo que não seja parte do site, lembre de listá-lo.
+
+.git/
+.gitignore
+.assetsignore
+wrangler.jsonc
+# Pasta temporária que o próprio wrangler cria ao rodar.
+.wrangler/
+
+README.md
+CONTRIBUTING.md
+LICENSE
+
+# O gerador das imagens roda na máquina de quem mantém, não no servidor.
+ferramentas/

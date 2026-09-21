@@ -18,7 +18,7 @@ Um site estático. Sem framework, sem build, sem dependência para rodar.
 ```
 index.html              a página inteira, com o CSS dentro
 404.html                página de endereço não encontrado
-_headers                cabeçalhos HTTP do Cloudflare Pages (CSP, HSTS, cache)
+_headers                cabeçalhos HTTP (CSP, HSTS, cache)
 robots.txt
 sitemap.xml
 favicon.svg             dois círculos próximos, com tema escuro embutido
@@ -26,6 +26,8 @@ apple-touch-icon.png    180×180, gerado
 og-image.png            1200×630, gerado
 fonts/                  10 arquivos .woff2 + as duas licenças SIL OFL
 ferramentas/            gerador das duas imagens (não faz parte do site)
+wrangler.jsonc          configuração do deploy na Cloudflare
+.assetsignore           o que fica no repositório mas não vai para o ar
 ```
 
 ## Como ver na sua máquina
@@ -88,14 +90,35 @@ Node para nada.
 
 ## Publicação
 
-O site é servido pelo **Cloudflare Pages**, ligado direto a este repositório.
+O site é servido por um **Worker da Cloudflare com arquivos estáticos**,
+ligado direto a este repositório. Todo `git push` na `main` publica sozinho.
+
+Não há código de Worker: o `wrangler.jsonc` não tem a chave `main`, então a
+Cloudflare entrega os arquivos direto, sem passar por script nenhum. É o que
+mantém o `_headers` valendo para tudo que sai daqui.
 
 | Campo | Valor |
 |---|---|
-| Framework preset | None |
+| Nome do Worker | `souproximo-org` |
 | Build command | *(vazio)* |
-| Build output directory | `/` |
+| Deploy command | `npx wrangler deploy` |
 | Domínio | `souproximo.org` (e `www`) |
+
+O domínio é ligado pelo painel, em **Settings → Domains & Routes → Custom
+domain**, e não pelo `wrangler.jsonc`. Isso é de propósito: mexer em DNS é a
+operação mais delicada do projeto, e deve ser feita com o painel na frente,
+vendo os conflitos — nunca por um deploy automático.
+
+**Ao ligar o domínio, não deixe a Cloudflare mexer em registro MX ou TXT.**
+Esses são o e-mail do projeto (MX, SPF, DKIM em `zmail._domainkey`, DMARC em
+`_dmarc`). Substituir um registro A, AAAA ou CNAME em `@` ou `www` é esperado;
+qualquer outra coisa, não.
+
+A calculadora de dívidas atende em `souproximo.org/dividas` por um segundo
+Worker, com rota própria, que vive em
+[outro repositório](https://github.com/souproximo/calculadora-dividas). Rota
+com caminho é mais específica que o domínio e roda antes dele. Nada disso
+precisa ser configurado aqui.
 
 O DNS fica na Cloudflare e **não deve ser entregue a provedor de hospedagem
 nem a agência** — é o que permite trocar site, e-mail e provedor de forma

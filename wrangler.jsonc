@@ -1,0 +1,26 @@
+// Configuração do deploy na Cloudflare (Workers com arquivos estáticos).
+//
+// Não há código de Worker aqui: este projeto só serve arquivos. Por isso não
+// existe a chave "main" — a Cloudflare entrega os arquivos direto, sem passar
+// por nenhum script nosso. É a forma mais simples que existe, e a que torna o
+// cabeçalho do arquivo _headers válido para tudo que sai daqui.
+//
+// O domínio souproximo.org é ligado a este Worker pelo painel, em
+// Settings > Domains & Routes > Custom domain. Fica fora deste arquivo de
+// propósito: mexer em DNS é a operação mais delicada do projeto e deve ser
+// feita com o painel na frente, vendo os conflitos, não por um deploy
+// automático.
+{
+  "name": "souproximo-org",
+  "compatibility_date": "2026-09-21",
+
+  // Sem endereço .workers.dev: o site tem um endereço só, e um segundo
+  // endereço público seria mais uma porta para o buscador indexar.
+  "workers_dev": false,
+
+  "assets": {
+    "directory": "./",
+    // Endereço que não existe devolve a 404.html, com status 404.
+    "not_found_handling": "404-page"
+  }
+}
