@@ -238,6 +238,48 @@
     font-variant-numeric: tabular-nums;
   }
 
+  .aviso-ferramenta {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 18px 20px;
+    border: 1px solid var(--accent);
+    text-decoration: none;
+  }
+
+  .aviso-ferramenta:hover,
+  .aviso-ferramenta:focus-visible {
+    background: var(--accent);
+  }
+
+  .aviso-ferramenta:hover *,
+  .aviso-ferramenta:focus-visible * {
+    color: var(--paper);
+  }
+
+  .aviso-ferramenta:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+
+  .aviso-ferramenta-tag {
+    font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .aviso-ferramenta-txt {
+    font-size: 16.5px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
   /* ---------- seções ---------- */
 
   section {
@@ -412,10 +454,15 @@
       <dt>Endereço</dt>
       <dd>souproximo.org</dd>
       <dt>Estágio</dt>
-      <dd>Em construção — nada no ar ainda</dd>
+      <dd>Em construção — a calculadora de dívidas já está no ar</dd>
       <dt>Verificado em</dt>
       <dd><span class="selo">21 · 09 · 2026</span></dd>
     </dl>
+
+    <a class="aviso-ferramenta" href="/dividas">
+      <span class="aviso-ferramenta-tag">Já no ar</span>
+      <span class="aviso-ferramenta-txt">Calculadora de dívidas — organize o que você deve e veja um jeito de sair delas</span>
+    </a>
   </header>
 
   <section>
@@ -514,9 +561,9 @@
     <div class="label">O ritmo</div>
     <div class="corpo">
       <h2>Devagar, e para durar</h2>
-      <p class="destaque">Nada está no ar ainda. Quando estiver, vai crescer em dois ritmos diferentes — e isso é de propósito.</p>
+      <p class="destaque">A primeira ferramenta já está no ar. Daqui para a frente, o projeto cresce em dois ritmos diferentes — e isso é de propósito.</p>
       <p><strong>As ferramentas pequenas, feitas só de programação</strong> — uma conta que se faz sozinha, um guia de passo a passo, um jeito de conferir uma informação — essas podem ser muitas. São baratas de manter, o código é aberto, e existe gente que sabe fazer e se dispõe a ajudar. Quanto mais gente chega, mais elas aparecem.</p>
-      <p><strong>Os serviços maiores, os que precisam de gente na rua</strong> — visitar, conferir, acompanhar uma família ao longo do tempo — esses vão no máximo um por ano. Não é falta de vontade. É que serviço com gente dentro só presta se for feito bem, e fazer bem leva tempo.</p>
+      <p><strong>Os projetos maiores, os que precisam de gente na rua</strong> — visitar, conferir, acompanhar uma família ao longo do tempo — esses serão construídos no máximo um por ano. Não é falta de vontade. É que serviço com gente dentro só presta se for feito bem, e fazer bem leva tempo.</p>
       <p>Este projeto não está tentando ficar grande. Está tentando durar e fazer diferença de verdade na vida de quem for atendido. Uma coisa bem feita vale mais do que dez pela metade.</p>
 
       <p class="ritmo">Cada coisa nova nasce sabendo quanto trabalho vai dar para manter. E tirar do ar o que não se consegue manter faz parte do plano — é mais honesto do que deixar apodrecer.</p>
