@@ -422,6 +422,23 @@
     margin: 0;
   }
 
+  footer .notas { display: grid; gap: 8px; }
+
+  /* Links do rodapé sem cor de destaque: são notas, não chamadas. */
+  footer .nota a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    overflow-wrap: anywhere;
+  }
+
+  footer .nota a:hover { color: var(--ink); }
+
+  footer .nota a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+
   @media (max-width: 720px) {
     section {
       grid-template-columns: 1fr;
@@ -456,7 +473,7 @@
       <dt>Estágio</dt>
       <dd>Em construção — a calculadora de dívidas já está no ar</dd>
       <dt>Verificado em</dt>
-      <dd><span class="selo">21 · 09 · 2026</span></dd>
+      <dd><span class="selo">25 · 09 · 2026</span></dd>
     </dl>
 
     <a class="aviso-ferramenta" href="/dividas">
@@ -572,7 +589,15 @@
 
   <footer>
     <span class="dominio">souproximo.org</span>
-    <p class="nota">Página conferida em 21 de setembro de 2026. Nada para assinar, nada para comprar, nada para instalar.</p>
+    <!--
+      Os links abaixo só saem da página quando a pessoa clica: abrir a página
+      não carrega nada de fora (regra 02). Mesma aba, sem parâmetro de rastreio.
+    -->
+    <div class="notas">
+      <p class="nota">Página conferida em 25 de setembro de 2026. Nada para assinar, nada para comprar, nada para instalar.</p>
+      <p class="nota">Quer ajudar, ou achou algo errado? Escreva para <a href="mailto:contato@souproximo.org">contato@souproximo.org</a>.</p>
+      <p class="nota">O código é aberto: veja o <a href="https://github.com/souproximo/souproximo.org">deste site</a> e o <a href="https://github.com/souproximo/calculadora-dividas">da calculadora</a>.</p>
+    </div>
   </footer>
 
 </div>

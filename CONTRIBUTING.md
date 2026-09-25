@@ -18,8 +18,11 @@ Na prática, para este repositório:
    “parceiro em destaque”.
 2. **Pedir o mínimo de informação.** Zero requisição a terceiros, zero script
    de terceiros, zero cookie, zero medição de audiência dentro da página. Se a
-   sua mudança adiciona uma URL que não começa com `/`, ela precisa de uma
-   justificativa muito boa — e provavelmente não tem.
+   sua mudança faz a página carregar algo (fonte, script, imagem, CSS, iframe)
+   de uma URL que não começa com `/`, ela precisa de uma justificativa muito
+   boa — e provavelmente não tem. Link que a pessoa clica para sair da página
+   é outra coisa: não faz pedido nenhum ao abrir a página. Mesmo assim, só
+   entra quando pedido, e sem parâmetro de rastreio (`utm_`, `ref=`).
 3. **Código aberto.** Nada de arquivo compilado sem a fonte junto.
 4. **Mandar para o canal certo.** Procon, CRAS, Defensoria e SUS não têm
    substituto e o projeto nunca se apresenta como alternativa a eles.

@@ -14,17 +14,20 @@ CSS mora dentro do `index.html`. Isso não é provisório nem falta de estrutura
 
 ## O que derruba uma mudança, por melhor que esteja o código
 
-1. **Qualquer URL que aponte para fora deste domínio.** Sem Google Fonts, sem
-   CDN, sem script de terceiro, sem medição de audiência. As fontes estão em
-   `fonts/` de propósito: pedir a fonte ao Google entregaria o endereço de
-   rede de cada visitante a uma empresa que não tem nada a ver com isso.
+1. **Qualquer recurso carregado de fora deste domínio** (fonte, script,
+   imagem, CSS, iframe, medição). Sem Google Fonts, sem CDN, sem medição de
+   audiência. As fontes estão em `fonts/` de propósito: pedir a fonte ao
+   Google entregaria o endereço de rede de cada visitante a uma empresa que
+   não tem nada a ver com isso. Links que a pessoa clica para sair da página
+   são permitidos quando o Leandro pedir; `mailto:` também. Nesses links,
+   nada de parâmetro de rastreio (`utm_`, `ref=`).
 2. **Qualquer dependência em tempo de execução.** Framework, pacote, bundler,
    passo de build. O que está no repositório é o que vai para o ar.
 3. **Qualquer coisa que gere receita** — afiliado, patrocínio, "parceiro em
    destaque".
 
-Se a sua mudança adiciona uma URL que não começa com `/`, ela precisa de uma
-justificativa muito boa — e provavelmente não tem.
+Se a sua mudança faz a página carregar algo de uma URL que não começa com `/`,
+ela precisa de uma justificativa muito boa — e provavelmente não tem.
 
 ## Antes de mexer em texto
 
